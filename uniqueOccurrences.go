@@ -23,4 +23,4 @@ func uniqueOccurrences(arr []int) bool {
     fmt.Println(count)
     fmt.Println(val)
     return true
-}uniqueOccurrences
+}

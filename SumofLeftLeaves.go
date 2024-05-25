@@ -6,23 +6,25 @@
  *     Right *TreeNode
  * }
  */
+package leetcodetest
+
 func sumOfLeftLeaves(root *TreeNode) int {
-    var total int
-    search(root,&total,"")
-    return total
+	var total int
+	sumOfLeftLeavesSearch(root, &total, "")
+	return total
 }
-func search(root *TreeNode,total *int,position string){
-    if root!= nil{
-        if root.Left == nil && root.Right == nil{
-            if position == "L"{
-                *total += root.Val
-            }
-        }
-        if root.Left!=nil{
-            search(root.Left,total,"L")
-        }
-        if root.Right!=nil{
-            search(root.Right,total,"R")
-        }        
-    }
+func sumOfLeftLeavesSearch(root *TreeNode, total *int, position string) {
+	if root != nil {
+		if root.Left == nil && root.Right == nil {
+			if position == "L" {
+				*total += root.Val
+			}
+		}
+		if root.Left != nil {
+			sumOfLeftLeavesSearch(root.Left, total, "L")
+		}
+		if root.Right != nil {
+			sumOfLeftLeavesSearch(root.Right, total, "R")
+		}
+	}
 }

@@ -1,3 +1,10 @@
+package leetcodetest
+
+import (
+	"fmt"
+	"strings"
+)
+
 var list = map[string][]string{
 	"2": []string{"a", "b", "c"},
 	"3": []string{"d", "e", "f"},
@@ -5,11 +12,12 @@ var list = map[string][]string{
 	"5": []string{"j", "k", "l"},
 	"6": []string{"m", "n", "o"},
 	"7": []string{"p", "q", "r", "s"},
-	"8": []string{"t","u","v"},
-    "9": []string{"w", "x","y", "z"},
+	"8": []string{"t", "u", "v"},
+	"9": []string{"w", "x", "y", "z"},
 }
+
 func letterCombinations(digits string) []string {
-    var rootSlice []string   
+	var rootSlice []string
 	if len(digits) <= 1 {
 		if _, ok := list[digits]; ok {
 			return list[digits]
@@ -33,4 +41,26 @@ func letterCombinations(digits string) []string {
 		rootSlice = tmp
 	}
 	return rootSlice
+}
+
+func main() {
+	// Test case 1: digits = "23"
+	digits := "23"
+	result := letterCombinations(digits)
+	fmt.Printf("Test case 1: %v\n", result)
+
+	// Test case 2: digits = "79"
+	digits = "79"
+	result = letterCombinations(digits)
+	fmt.Printf("Test case 2: %v\n", result)
+
+	// Test case 3: digits = "2"
+	digits = "2"
+	result = letterCombinations(digits)
+	fmt.Printf("Test case 3: %v\n", result)
+
+	// Test case 4: digits = ""
+	digits = ""
+	result = letterCombinations(digits)
+	fmt.Printf("Test case 4: %v\n", result)
 }

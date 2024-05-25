@@ -1,18 +1,13 @@
-package main
+package leetcodetest
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 )
 
-const Max = 1<<31 - 1
-const Min = -Max - 1
-
-func main() {
-	fmt.Println("Atoi ==> ", myAtoi("  1234-56"))
-}
 func myAtoi(str string) int {
+	const Max = 1<<31 - 1
+	const Min = -Max - 1
 	slen := len(str)
 	mstr := ""
 	var prev byte = 0

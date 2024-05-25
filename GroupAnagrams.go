@@ -1,14 +1,8 @@
-package main
+package leetcodetest
 
 import (
-	"fmt"
-	"sort"
+	gasort "sort"
 )
-
-func main() {
-	// groupAnagrams([]string{"eat", "tea", "tan", "ate", "nat", "bat"})
-	fmt.Println("INT to Roman : ", groupAnagrams([]string{"eat", "tea", "tan", "ate", "nat", "bat"}))
-}
 
 type sortRune []byte
 
@@ -29,7 +23,7 @@ func groupAnagrams(strs []string) [][]string {
 	dist := make(map[string]int)
 	for _, str := range strs {
 		chars := []byte(str)
-		sort.Sort(sortRune(chars))
+		gasort.Sort(sortRune(chars))
 		sorted := string(chars)
 		if idx, ok := dist[sorted]; ok {
 			output[idx] = append(output[idx], str)

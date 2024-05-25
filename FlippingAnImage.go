@@ -1,23 +1,15 @@
-package main
+// flipAndInvertImage flips and inverts a given image represented as a 2D array of integers.
+// It takes a 2D array A as input and returns the modified array after flipping and inverting each row.
+package leetcodetest
 
-import (
-	"fmt"
-)
-
-func main() {
-	fmt.Println("Flip matrix  : ", flipAndInvertImage([][]int{[]int{0, 0, 1}, []int{1, 1, 0}, []int{1, 0, 0}}))
-}
 func flipAndInvertImage(A [][]int) [][]int {
 	for _, row := range A {
 		last := len(row) - 1
-		for j, _ := range row {
-			if j < last-1 {
-				row[j], row[last-j] = row[last-j], row[j]
-			}
-			if row[j] == 0 {
-				row[j] = 1
-			} else {
-				row[j] = 0
+		for j := 0; j <= last/2; j++ {
+			row[j], row[last-j] = row[last-j], row[j]
+			row[j] = 1 - row[j]
+			if j != last-j {
+				row[last-j] = 1 - row[last-j]
 			}
 		}
 	}

@@ -1,13 +1,8 @@
-package main
+package leetcodetest
 
 import (
-	"fmt"
 	"strings"
 )
-
-func main() {
-	fmt.Println("Roman to INT : ", romanToInt("III"))
-}
 
 var roman = map[string]int{
 	"I": 1,

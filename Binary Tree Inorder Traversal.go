@@ -6,17 +6,24 @@
  *     Right *TreeNode
  * }
  */
+package leetcodetest
 
-func inorderTraversal(root *TreeNode) []int {
-    List := &[]int{}
-    search(root,List)
-    return *List
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
 }
 
-func search(node *TreeNode, List *[]int){
-    if node != nil{
-        search(node.Left,List)
-        *List = append(*List,node.Val)
-        search(node.Right,List)
-    }
+func inorderTraversal(root *TreeNode) []int {
+	List := &[]int{}
+	BinTreeSearch(root, List)
+	return *List
+}
+
+func BinTreeSearch(node *TreeNode, List *[]int) {
+	if node != nil {
+		BinTreeSearch(node.Left, List)
+		*List = append(*List, node.Val)
+		BinTreeSearch(node.Right, List)
+	}
 }

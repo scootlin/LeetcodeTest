@@ -1,13 +1,8 @@
-package main
+package leetcodetest
 
 import (
-	"fmt"
 	"strconv"
 )
-
-func main() {
-	fmt.Println(isPalindrome(100110011001))
-}
 
 func isPalindrome(x int) bool {
 	str := strconv.Itoa(x)

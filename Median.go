@@ -1,11 +1,11 @@
-package main
+package leetcodetest
 
-import "sort"
+import medianSort "sort"
 
-func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
+func medianSortedArrays(nums1 []int, nums2 []int) float64 {
 	totalLen := len(nums1) + len(nums2)
 	nums := append(nums1, nums2...)
-	sort.Ints(nums)
+	medianSort.Ints(nums)
 	if totalLen%2 != 0 {
 		return float64(nums[totalLen/2])
 	} else {

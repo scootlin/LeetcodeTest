@@ -1,11 +1,10 @@
-package main
+package leetcodetest
 
 import (
-	"fmt"
 	"math"
 )
 
-var roman = map[int]string{
+var intToRomanMap = map[int]string{
 	1:    "I",
 	5:    "V",
 	10:   "X",
@@ -15,13 +14,8 @@ var roman = map[int]string{
 	1000: "M",
 }
 
-func main() {
-
-	fmt.Println("INT to Roman : ", intToRoman(1001))
-}
-
 func intToRoman(num int) string {
-	if str, ok := roman[num]; ok {
+	if str, ok := intToRomanMap[num]; ok {
 		return str
 	}
 	power := 0
@@ -70,9 +64,9 @@ func getRoman(power int, remainder int) string {
 }
 
 func conver2Raman(median, span int, max int, target int) string {
-	base := roman[median]
+	base := intToRomanMap[median]
 	// fmt.Println("Base = ", base)
-	minus := roman[span]
+	minus := intToRomanMap[span]
 	// fmt.Println("minus = ", minus)
 	if target < 4 {
 		base = ""
@@ -87,7 +81,7 @@ func conver2Raman(median, span int, max int, target int) string {
 	} else if target%5 == 0 {
 		return base
 	} else {
-		minus := roman[span]
+		minus := intToRomanMap[span]
 		base = minus + base
 	}
 	return base
